@@ -11,25 +11,3 @@ android {
         versionCode generateVersionCode(versionName)
     }
 }
-
-// TODO separate plugin
-static def generateVersionCode(String versionName) {
-    String[] majorMinorPatch = versionName.split('-').first().split('\\.')
-
-    int major = majorMinorPatch.getAt(0).toInteger()
-    if (major > 99) {
-        throw new GradleException("Major version of application $major can not be higher than 99")
-    }
-
-    int minor = majorMinorPatch.getAt(1).toInteger()
-    if (minor > 99) {
-        throw new GradleException("Minor version of application $minor can not be higher than 99")
-    }
-
-    int patch = majorMinorPatch.getAt(2).toInteger()
-    if (patch > 9) {
-        throw new GradleException("Patch (hotfix) version $patch can not be higher than 9")
-    }
-
-    return major * 1000 + minor * 10 + patch
-}
