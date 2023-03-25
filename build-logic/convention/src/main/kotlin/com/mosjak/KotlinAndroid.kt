@@ -10,8 +10,6 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 internal fun Project.configureKotlinAndroid(
     commonExtension: CommonExtension<*, *, *, *>,
 ) {
-    val versionCatalog = getVersionCatalog()
-
     commonExtension.apply {
         compileSdk = versionCatalog.getVersion("compileSdk").toInt()
 

@@ -1,8 +1,11 @@
 import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.api.variant.ApplicationAndroidComponentsExtension
 import com.mosjak.configure
+import com.mosjak.configureJacoco
 import com.mosjak.configureKotlinAndroid
+import com.mosjak.getByType
 import com.mosjak.getVersion
-import com.mosjak.getVersionCatalog
+import com.mosjak.versionCatalog
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -13,12 +16,17 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         with(pluginManager) {
             apply("com.android.application")
             apply("org.jetbrains.kotlin.android")
+            apply("jacoco")
         }
 
         extensions.configure<ApplicationExtension> {
             configureKotlinAndroid(this)
-            defaultConfig.targetSdk = target.getVersionCatalog().getVersion("targetSdk").toInt()
+            defaultConfig.targetSdk = target.versionCatalog.getVersion("targetSdk").toInt()
         }
+
+        val extension = extensions.getByType<ApplicationAndroidComponentsExtension>()
+        configureJacoco(extension)
+
         target.extensions.add("generateVersionCode", ::generateVersionCode)
     }
 }

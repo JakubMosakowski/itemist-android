@@ -14,5 +14,9 @@ gradlePlugin {
             id = "mosjak.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
+        androidTestConvention {
+            id = "mosjak.android.test"
+            implementationClass = "AndroidTestConventionPlugin"
+        }
     }
 }
