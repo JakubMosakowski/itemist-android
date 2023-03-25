@@ -1,6 +1,7 @@
 [versions]
 androidGradlePlugin = "7.4.2"
 compileSdk = "33"
+detekt = "1.22.0"
 jacoco = "0.8.8"
 junit5 = "5.9.2"
 junitPlugin = "1.8.2.1"
@@ -10,6 +11,7 @@ mockito = "4.1.0"
 targetSdk = "33"
 
 [libraries]
+detekt = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }
 jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit5" }
 jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit5" }
 mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
@@ -21,5 +23,6 @@ kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-pl
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 junit5 = { id = "de.mannodermaus.android-junit5", version.ref = "junitPlugin" }

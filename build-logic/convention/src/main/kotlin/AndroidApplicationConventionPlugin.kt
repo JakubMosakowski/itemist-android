@@ -4,6 +4,7 @@ import com.mosjak.configure
 import com.mosjak.configureJacoco
 import com.mosjak.configureKotlinAndroid
 import com.mosjak.getByType
+import com.mosjak.getLib
 import com.mosjak.getVersion
 import com.mosjak.versionCatalog
 import org.gradle.api.GradleException
@@ -16,12 +17,17 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         with(pluginManager) {
             apply("com.android.application")
             apply("org.jetbrains.kotlin.android")
+            apply("io.gitlab.arturbosch.detekt")
             apply("jacoco")
         }
 
         extensions.configure<ApplicationExtension> {
             configureKotlinAndroid(this)
             defaultConfig.targetSdk = target.versionCatalog.getVersion("targetSdk").toInt()
+        }
+
+        with(dependencies) {
+            add("detektPlugins", target.versionCatalog.getLib("detekt"))
         }
 
         val extension = extensions.getByType<ApplicationAndroidComponentsExtension>()
