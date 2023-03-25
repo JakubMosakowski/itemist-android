@@ -27,7 +27,7 @@ internal fun Project.configureKotlinAndroid(
         }
 
         kotlin {
-            jvmToolchain(11)
+            jvmToolchain(JavaVersion.VERSION_11.toString().toInt())
         }
 
         sourceSets.all { sourceSet ->
