@@ -1,0 +1,18 @@
+plugins {
+    id 'java-gradle-plugin'
+    alias(libs.plugins.kotlin.jvm)
+}
+
+dependencies {
+    compileOnly libs.android.gradlePlugin
+    compileOnly libs.kotlin.gradlePlugin
+}
+
+gradlePlugin {
+    plugins {
+        androidApplicationConvention {
+            id = "mosjak.android.application"
+            implementationClass = "AndroidApplicationConventionPlugin"
+        }
+    }
+}

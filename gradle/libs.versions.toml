@@ -1,0 +1,16 @@
+[versions]
+androidGradlePlugin = "7.4.2"
+compileSdk = "33"
+kotlin = "1.8.10"
+minSdk = "24"
+targetSdk = "33"
+
+[libraries]
+
+# Dependencies of the included build-logic
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

@@ -1,0 +1,9 @@
+*.iml
+.gradle
+.idea/*
+!.idea/codeStyles
+.idea/codeStyles/*
+!.idea/codeStyles/Project.xml
+!.idea/file.template.settings.xml
+build
+/local.properties
