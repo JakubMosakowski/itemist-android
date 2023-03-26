@@ -1,7 +1,15 @@
 plugins {
     id 'mosjak.android.library'
+    id 'mosjak.android.library.compose'
 }
 
 android {
     namespace 'com.mosjak.feature.splash.presentation'
+}
+
+dependencies {
+    implementation libs.compose.activity
+    implementation libs.compose.material3
+    implementation libs.compose.preview
+    implementation libs.splash
 }
