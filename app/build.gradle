@@ -12,3 +12,7 @@ android {
         versionCode generateVersionCode(versionName)
     }
 }
+
+dependencies {
+    implementation project(":feature:splash:presentation")
+}

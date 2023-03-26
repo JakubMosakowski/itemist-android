@@ -1,0 +1,7 @@
+plugins {
+    id 'mosjak.android.library'
+}
+
+android {
+    namespace 'com.mosjak.feature.splash.presentation'
+}
