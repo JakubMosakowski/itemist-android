@@ -18,6 +18,10 @@ gradlePlugin {
             id = "mosjak.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
+        register("androidLibraryCompose") {
+            id = "mosjak.android.library.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
         androidTestConvention {
             id = "mosjak.android.test"
             implementationClass = "AndroidTestConventionPlugin"

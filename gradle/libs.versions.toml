@@ -1,6 +1,9 @@
 [versions]
 androidGradlePlugin = "7.4.2"
 compileSdk = "33"
+composeActivity = "1.6.1"
+composeBom = "2023.03.00"
+composeCompiler = "1.4.4"
 detekt = "1.22.0"
 jacoco = "0.8.8"
 junit5 = "5.9.2"
@@ -11,6 +14,10 @@ mockito = "4.1.0"
 targetSdk = "33"
 
 [libraries]
+compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "composeActivity" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3"}
+compose-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview"}
 detekt = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }
 jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit5" }
 jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit5" }
